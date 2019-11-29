@@ -1,0 +1,241 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Trang chủ | Admin</title>
+
+    <link href="css/style.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form id="frmMaster" runat="server">
+        <div class="loader-bg">
+            <div class="loader-track">
+                <div class="loader-fill"></div>
+            </div>
+        </div>
+
+
+        <nav class="pcoded-navbar menupos-fixed menu-light ">
+            <div class="navbar-wrapper  ">
+                <div class="navbar-content scroll-div ">
+                    <ul class="nav pcoded-inner-navbar ">
+
+                        <li class="nav-item <%= SetCssClass("TrangChuAdmin.aspx") %>">
+                            <asp:LinkButton ID="linkTrangChu" runat="server" CssClass="nav-link " PostBackUrl="~/Admin/TrangChuAdmin.aspx" CausesValidation="False">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-home"></i>
+                                </span>
+                                Trang chủ
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item <%= SetCssClass("HangXe.aspx") %> <%= SetCssClass("ThemHangXe.aspx") %> <%= SetCssClass("SuaHangXe.aspx") %>">
+                            <asp:LinkButton ID="LinkHangXe" runat="server" CssClass="nav-link" PostBackUrl="~/Admin/HangXe.aspx">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-file-text"></i>
+                                </span>
+                                Hãng xe
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item  <%= SetCssClass("Xe.aspx") %> <%= SetCssClass("ThemXeMoi.aspx") %> <%= SetCssClass("SuaThongTinXe.aspx") %>">
+                            <asp:LinkButton ID="LinkXe" runat="server" CssClass="nav-link" PostBackUrl="~/Admin/Xe.aspx" CausesValidation="False">
+                              <span class="pcoded-micon">
+                                  <i class="feather icon-package"></i>
+                              </span>
+                                Xe
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item <%= SetCssClass("DonHang.aspx") %> <%= SetCssClass("SuaTinhTrangDonHang.aspx") %>">
+                            <asp:LinkButton ID="LinkDonHang" runat="server" CssClass="nav-link " PostBackUrl="~/Admin/DonHang.aspx" CausesValidation="False">
+                                <span class="pcoded-micon">
+                                <i class="feather icon-layers"></i>
+                                </span>
+                                Đơn hàng
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item <%= SetCssClass("TaiKhoanKH.aspx") %> <%= SetCssClass("SuaTaiKhoan.aspx") %>">
+                            <asp:LinkButton ID="LinkTaiKhoan" runat="server" CssClass="nav-link " PostBackUrl="~/Admin/TaiKhoanKH.aspx" CausesValidation="False">
+                                <span class="pcoded-micon">
+                                    <i class="feather icon-users"></i>
+                                </span>
+                                Tài khoản khách hàng
+                            </asp:LinkButton>
+                        </li>
+                        </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End navbar-menu -->
+
+
+        <header class="navbar pcoded-header navbar-expand-lg navbar-light headerpos-fixed header-blue">
+            <div class="m-header">
+                <a class="mobile-menu" id="mobile-collapse" href="#!"><span></span></a>
+                <asp:LinkButton ID="LinkLogoTrangChu" runat="server" CssClass="b-brand" PostBackUrl="~/Admin/TrangChuAdmin.aspx">
+                     <img src="images/choxe-logo.png" alt="logo" class="logo">
+                </asp:LinkButton>
+                <a href="#!" class="mob-toggler">
+                    <i class="feather icon-more-vertical"></i>
+                </a>
+            </div>
+            <!-- End logo-header -->
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#!" class="pop-search"><i class="feather icon-search"></i></a>
+                        <div class="search-bar">
+                            <input type="text" class="form-control border-0 shadow-none" placeholder="Search here">
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#!" class="full-screen" onclick="javascript:toggleFullScreen()"><i
+                            class="feather icon-maximize"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" data-toggle="dropdown"><i
+                                class="icon feather icon-bell"></i><span class="badge bg-danger"><span
+                                    class="sr-only"></span></span></a>
+                            <div class="dropdown-menu dropdown-menu-right notification">
+                                <div class="noti-head">
+                                    <h6 class="d-inline-block m-b-0">Thông báo</h6>
+                                    <div class="float-right">
+                                        <a href="#!" class="m-r-10">Đánh dấu đã đọc</a>
+                                        <a href="#!">Xóa tất cả</a>
+                                    </div>
+                                </div>
+                                <ul class="noti-body">
+                                    <li class="n-title">
+                                        <p class="m-b-0">Mới</p>
+                                    </li>
+                                    <li class="notification">
+                                        <div class="media">
+                                            <img class="img-radius" src="images/user.JPG"
+                                                alt="Generic placeholder image">
+                                            <div class="media-body">
+                                                <p>
+                                                    <strong>John Doe</strong><span class="n-time text-muted"><i
+                                                        class="icon feather icon-clock m-r-10"></i>5 phút trước</span>
+                                                </p>
+                                                <p>Có một hóa đơn mới cần xử lý</p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="n-title">
+                                        <p class="m-b-0">Trước đó</p>
+                                    </li>
+                                    <li class="notification">
+                                        <div class="media">
+                                            <img class="img-radius" src="images/user.JPG"
+                                                alt="Generic placeholder image">
+                                            <div class="media-body">
+                                                <p>
+                                                    <strong>Joseph William</strong><span class="n-time text-muted"><i
+                                                        class="icon feather icon-clock m-r-10"></i>10 phút trước</span>
+                                                </p>
+                                                <p>Khách hàng cần giúp đỡ</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                                <div class="noti-footer">
+                                    <a href="#!">Xem tất cả</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="dropdown drp-user">
+                            <a href="#!" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="images/user.JPG" class="img-radius wid-40"
+                                    alt="User-Profile-Image">
+                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right profile-notification">
+                                <ul class="pro-body">
+                                    <li>
+                                        <asp:LinkButton ID="LinkThongTinTaiKhoan" CssClass="dropdown-item" runat="server" PostBackUrl="~/Admin/ThongTinTaiKhoan.aspx">
+                                
+                                        <i class="feather icon-user"></i>
+                                         Thông tin
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="LinkEmail" CssClass="dropdown-item" runat="server" >
+
+                                        <i class="feather icon-mail"></i>
+                                        Tin nhắn
+                                        </asp:LinkButton>
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="linkDangXuat" OnClick="linkDangXuat_Click" CssClass="dropdown-item" runat="server" PostBackUrl="~/Admin/DangNhapAdmin.aspx">
+
+                                      <i class="feather icon-log-out"></i>
+                                        Đăng xuất
+
+                                        </asp:LinkButton>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- End navbar search-->
+        </header>
+        <!-- End logo end navbar -->
+
+        <section class="pcoded-main-container">
+            <div class="pcoded-content">
+
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+
+
+
+
+
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                </asp:ContentPlaceHolder>
+
+
+
+                            </div>
+                            <!-- End content website -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </form>
+
+    <script src="js/vendor-all.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/pcoded.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.animation-toggle').hover(function () {
+                var anim = $(this).attr('data-animate');
+                $(this).addClass('animated');
+                $(this).addClass(anim);
+                setTimeout(function () {
+                    $('.animation-toggle').removeClass(anim);
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

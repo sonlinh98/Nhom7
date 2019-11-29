@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBanOto" Class="luotxemDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-DQO6NLI\SQLEXPRESS;Initial Catalog=QLBanOto;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLBanOtoConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DON_HANG" Member="DON_HANGs">
+    <Type Name="DON_HANG">
+      <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DonGia" Type="System.Decimal" DbType="Decimal(11,0) NOT NULL" CanBeNull="false" />
+      <Column Name="HinhThucThanhToan" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MaXe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenTaiKhoan" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="TrangThaiDonHang" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TAI_KHOAN_DON_HANG" Member="TAI_KHOAN" ThisKey="TenTaiKhoan" OtherKey="TenTaiKhoan" Type="TAI_KHOAN" IsForeignKey="true" />
+      <Association Name="XE_DON_HANG" Member="XE" ThisKey="MaXe" OtherKey="MaXe" Type="XE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HANG_XE" Member="HANG_XEs">
+    <Type Name="HANG_XE">
+      <Column Name="MaHangXe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenHang" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Anh" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="HANG_XE_XE" Member="XEs" ThisKey="MaHangXe" OtherKey="MaHangXe" Type="XE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAI_KHOAN" Member="TAI_KHOANs">
+    <Type Name="TAI_KHOAN">
+      <Column Name="TenTaiKhoan" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoTen" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SoDienThoai" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MatKhau" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Quyen" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Khoa" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TAI_KHOAN_DON_HANG" Member="DON_HANGs" ThisKey="TenTaiKhoan" OtherKey="TenTaiKhoan" Type="DON_HANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TinTuc" Member="TinTucs">
+    <Type Name="TinTuc">
+      <Column Name="MaTin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Anh" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="LuotXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.XE" Member="XEs">
+    <Type Name="XE">
+      <Column Name="MaXe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenXe" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TinhTrang" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="GiaBan" Type="System.Decimal" DbType="Decimal(11,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="HopSo" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NhienLieu" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="KieuDanDong" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="MauSac" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="KmDaDi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DongXe" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NamSanXuat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="XuatXu" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="Anh" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MaHangXe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CoSan" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="XE_DON_HANG" Member="DON_HANGs" ThisKey="MaXe" OtherKey="MaXe" Type="DON_HANG" />
+      <Association Name="HANG_XE_XE" Member="HANG_XE" ThisKey="MaHangXe" OtherKey="MaHangXe" Type="HANG_XE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.tintuc_chiTietLuotXem" Method="tintuc_chiTietLuotXem">
+    <Parameter Name="matin" Type="System.Int32" DbType="Int" />
+    <Parameter Name="luotxem" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.tintuc_chiTietSLX" Method="tintuc_chiTietSLX">
+    <Parameter Name="luotXem" Type="System.Int32" DbType="Int" />
+    <Parameter Name="matin" Type="System.Int32" DbType="Int" />
+    <ElementType Name="tintuc_chiTietSLXResult">
+      <Column Name="MaTin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Anh" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MoTa" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NgayTao" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="LuotXem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

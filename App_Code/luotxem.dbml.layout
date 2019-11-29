@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="luotxem">
+  <DataContextMoniker Name="/luotxemDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2f145d5d-6a93-423b-a4bf-659b3a1d9aa0" absoluteBounds="1.75, 1.625, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/luotxemDataContext/DON_HANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db0eafb1-f497-4f85-b982-f13218843b47" absoluteBounds="1.7650000000000001, 2.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="43dfa834-1d49-456d-aaf9-9c135a94f072" absoluteBounds="1.125, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/luotxemDataContext/HANG_XE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba05f5af-051a-4299-837b-4a1b62b3b959" absoluteBounds="1.1400000000000001, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de1d0e9d-b754-43bd-a592-e82dd1a8e1d9" absoluteBounds="1.5, 1, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/luotxemDataContext/TAI_KHOAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f5c622b-daf8-4580-af68-1b619b5d9e5f" absoluteBounds="1.5150000000000001, 1.46, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.34780110677083); (2.5 : 4.03049967447917); (2.75 : 4.03049967447917); (2.75 : 3.78049967447917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/luotxemDataContext/TAI_KHOAN/TAI_KHOAN_DON_HANG" />
+      <nodes>
+        <classShapeMoniker Id="de1d0e9d-b754-43bd-a592-e82dd1a8e1d9" />
+        <classShapeMoniker Id="2f145d5d-6a93-423b-a4bf-659b3a1d9aa0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="fcb05155-bfca-40f0-bbd7-01bc5353f4a1" absoluteBounds="0.75, 1.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/luotxemDataContext/TinTuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dea4ae06-cd53-457c-9abd-91e8a29b046a" absoluteBounds="0.765, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cea99ba9-5eb0-449b-af71-25fae7ef5339" absoluteBounds="4.5, 1.625, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/luotxemDataContext/XE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8239190-67d9-4ebe-9419-024abde61e47" absoluteBounds="4.515, 2.085, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.5 : 2.70274983723958); (3.75 : 2.70274983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/luotxemDataContext/XE/XE_DON_HANG" />
+      <nodes>
+        <classShapeMoniker Id="cea99ba9-5eb0-449b-af71-25fae7ef5339" />
+        <classShapeMoniker Id="2f145d5d-6a93-423b-a4bf-659b3a1d9aa0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 1.375); (2.125 : 1); (5.5 : 1); (5.5 : 1.625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/luotxemDataContext/HANG_XE/HANG_XE_XE" />
+      <nodes>
+        <classShapeMoniker Id="43dfa834-1d49-456d-aaf9-9c135a94f072" />
+        <classShapeMoniker Id="cea99ba9-5eb0-449b-af71-25fae7ef5339" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

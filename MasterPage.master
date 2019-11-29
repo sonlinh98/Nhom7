@@ -1,0 +1,275 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <title>ChoXe.net</title>
+     <LINK REL="SHORTCUT ICON"  HREF="Icon/dongxe.png">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+    <!--[if lte IE 6]><link rel="stylesheet" href="css/ie6.css" type="text/css" media="all" /><![endif]-->
+    <script src="js/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.jcarousel.pack.js" type="text/javascript"></script>
+    <script src="js/jquery-func.js" type="text/javascript"></script>
+      <style>
+        h1#logo a{ margin-top:-15px; }
+        body{
+            font-family: inherit;
+        }
+        #navigation ul li a {
+            font-size:14px;
+        }
+        .box h2 {
+            color: white;
+            font-size: 17px;
+           background-color: #9d0202;
+        }
+        .box {
+            color:black;
+            font-size:14px;
+           margin-left:4px;
+        }
+        .categories ul li a {
+            color:black;
+            font-size:17px;
+        }
+        .categories ul li a:hover {
+            color: red;
+            text-decoration:inherit;
+        }
+        .more-products {
+            margin-left:280px;
+            width:960px;
+        }
+        .cols {
+            margin-left:280px;
+        }
+        #footer {
+            margin-left:280px;
+            width:950px;
+        }
+          .auto-style1 {
+              width: 100%;
+          }
+          .imghang {
+              margin-left:0px;
+          }
+          .hangmp {
+              margin-left:0px;
+              font-size: large;
+              color:black;
+          }
+          
+          .ac {
+              background-color:white;
+          }
+          .auto-style2 {
+              font-size: large;
+              margin-left: -10px;
+          }
+          .imghang{
+			transition: all 1s;
+			-moz-transition: all 1s;
+			-webkit-transition: all 1s;
+		}
+		.imghang:hover{
+			transform:scale(1.4);
+		}
+        .categories {
+            min-height: 183px;
+        }
+
+        .tenhangxe {
+            font-size: large;
+            text-decoration:none;
+        }
+        .tenhangxe:hover {
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+            <!-- Shell -->
+        <div class="shell">
+          <!-- Header -->
+          <div id="header">
+            <h1 id="logo"><a href="trangchu.aspx">Shop Car</a></h1>
+            <!-- Cart -->
+            <!--<div id="cart"> <a href="#" class="cart-link">Your Shopping Cart</a>
+              <div class="cl">&nbsp;</div>
+              <span>Articles: <strong>4</strong></span> &nbsp;&nbsp; <span>Cost: <strong>$250.99</strong></span> </div>
+            <!-- End Cart -->
+            <!-- Navigation -->
+            <div id="navigation">
+              <ul>
+                <li><a href="trangchu.aspx">Home</a></li>              
+                <li><a href="tintuc.aspx">Tin tức về xe</a></li>
+                <li><a href="timkiemxe.aspx">Tìm kiếm</a></li>
+                <li><a href="dangnhap.aspx">Đăng nhập</a></li>
+                <li><a href="dangky.aspx">Đăng ký</a></li>
+              </ul>
+            </div>
+            <!-- End Navigation -->
+          </div>
+          <!-- End Header -->
+          <!-- Main -->
+          <div id="main">
+            <div class="cl">&nbsp;</div>
+            <!-- Content -->
+            <div id="content">
+              <!-- Content Slider -->
+              <div id="slider" class="box">
+                <div id="slider-holder">
+                  <ul>
+                    <li><a href="#"><img src="css/images/xeslide8.jpg" width="800px" height="285px" alt="" /></a></li>
+                    <li><a href="#"><img src="css/images/anhbiaxe2.jpg" width="800px" height="285px"  alt="" /></a></li>
+                    <li><a href="#"><img src="css/images/anhbiaxe1.jpg" width="800px" height="285px"  alt="" /></a></li>
+                    <li><a href="#"><img src="css/images/xeslide6.jpg" width="800px" height="285px"  alt="" /></a></li>
+                  </ul>
+                </div>
+                <div id="slider-nav"> <a href="#" class="active">1</a> <a href="#">2</a> <a href="#">3</a> <a href="#">4</a> </div>
+              </div>
+              <!-- End Content Slider -->
+              <!-- Products -->
+             <div>
+                <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+                </asp:ContentPlaceHolder>
+            </div>
+              <!-- End Products -->
+            </div>
+            <!-- End Content -->
+            <!-- Sidebar -->
+            <div id="sidebar">
+              <!-- Search -->
+              <div class="box categories">
+                <h2>Liên hệ admin <span></span></h2>
+                <div class="box-content">
+                  <ul>
+                    <li><a href="#">Lê Hà</a></li>
+                    <li><a href="#">Trọng Sơn</a></li>
+                      <li><a href="#">Minh Quyết</a></li>
+                      <li><a href="#">Đình Phi</a></li>
+                    <li class="last"><a href="#">Xuân Trường</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              </div>
+              <!-- End Search -->
+              <!-- Categories -->
+              
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="xemhangxe.aspx"><asp:Label ID="Label2" runat="server" CssClass="auto-style2" ForeColor="Black" Text="Xem tất cả các hãng xe"></asp:Label></a>
+&nbsp;<div class="box-content">
+                    
+                    <asp:DataList ID="DataList1" runat="server" DataKeyField="MaHangXe" DataSourceID="SqlDataSource1" RepeatColumns="1" BackColor="white" BorderColor="#dedede" BorderStyle="None" BorderWidth="1px" CellPadding="3" CellSpacing="2" GridLines="Both" Width="220px">
+                        <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                        <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                        <ItemStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
+                        <ItemTemplate>
+                         
+                            <table class="auto-style1">
+                                <tr>
+                                    <td class="ac">
+                                        <a href="xemdanhsachxetheohang.aspx?MaHangXe=<%# Eval("MaHangXe") %>"><asp:Image ID="Image1" runat="server" CssClass="imghang" Height="66px" ImageUrl='<%# Eval("Anh", "~/ImageHangXe/{0}") %>' Width="97px" /></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="ac">
+                                        <asp:LinkButton ID="LinkButton1" runat="server" CssClass="tenhangxe" Text='<%# Bind("TenHang") %>' PostBackUrl='<%# Eval("MaHangXe", "xemdanhsachxetheohang.aspx?MaHangXe={0}") %>'></asp:LinkButton>
+                                    </td>
+                                </tr>
+                            </table>
+                          
+                        </ItemTemplate>
+                        <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
+                    </asp:DataList>
+                    
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLBanOtoConnectionString %>" SelectCommand="select * from HANG_XE where TenHang='KIA' or TenHang='Toyota' or TenHang='Hyundai' or TenHang='Ford'"></asp:SqlDataSource>
+                    <br />
+                </div>
+              
+              
+              
+              <!-- End Categories -->
+            </div>
+            <!-- End Sidebar -->
+            <div class="cl">&nbsp;</div>
+          </div>
+          <!-- End Main -->
+          <!-- Side Full -->
+          <div class="side-full">
+            <!-- More Products -->
+            <div class="more-products">
+              <div class="more-products-holder">
+                <ul>
+                   <li><a href="#"><img src="ImagesXe/xeford1.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xetoyota10.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xeford2.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xetoyota9.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xehyundai2.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xekia2.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xeford3.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xekia15.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xetoyota6.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xekia11.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xetoyota10.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xeford2.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xehyundai5.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xekia14.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xetoyota12.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xekia3.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xetoyota11.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="ImagesXe/xeford5.jpg" width="120px" height="100px" alt="" /></a></li>
+                  <li><a href="#"><img src="" width="120px" height="100px" alt="" /></a></li>
+                  <li class="last"><a href="#"><img src="css/images/xechay3.jpg" alt="" /></a></li>
+                </ul>
+              </div>
+              <div class="more-nav"> <a href="#" class="prev">previous</a> <a href="#" class="next">next</a> </div>
+            </div>
+            <!-- End More Products -->
+            <!-- Text Cols -->
+            <div class="cols">
+              <div class="cl">&nbsp;</div>
+              <div class="col">
+                <h3 class="ico ico1">Vận chuyển nhanh chóng</h3>
+                <p>Cửa hàng chúng tôi luôn đặt tiêu chí nhanh chóng trong khâu vận chuyển. Xe của khách hàng không bị lỗi lầm gì</p>
+                <p class="more"><a href="#" class="bul">ChoXe.net</a></p>
+              </div>
+              <div class="col">
+                <h3 class="ico ico2">CSKH nhiệt tình</h3>
+                <p>Nếu quý khách có vấn đề gì sau khi nhận hàng hãy liên hệ với chúng tôi. Chúng tôi sẽ hỗ trợ các bạn.</p>
+                <p class="more"><a href="#" class="bul">ChoXe.net</a></p>
+              </div>
+              <div class="col">
+                <h3 class="ico ico3">Ưu đãi hấp dẫn</h3>
+                <p>Chọn mua xe ở cửa hàng chúng tôi là sự lựa chọn chính xác của khách hàng. Cảm ơn các bạn.</p>
+                <p class="more"><a href="#" class="bul">ChoXe.net</a></p>
+              </div>
+              <div class="col col-last">
+                <h3 class="ico ico4">Mua hàng nhanh chóng</h3>
+                <p>Chúng tôi luôn tạo điều kiện để khách hàng có thể chọn xe và đưa ra quyết định mua xe một cách nhanh chóng</p>
+                <p class="more"><a href="#" class="bul">ChoXe.net</a></p>
+              </div>
+              <div class="cl">&nbsp;</div>
+            </div>
+            <!-- End Text Cols -->
+          </div>
+          <!-- End Side Full -->
+          <!-- Footer -->
+          <div id="footer">
+            <p class="left"> <a href="#">Home</a> <span>|</span> <a href="#">Support</a> <span>|</span> <a href="#">My Account</a> <span>|</span> <a href="#">The Store</a> <span>|</span> <a href="#">Contact</a> </p>
+            <p class="right"> &copy; 2019 Shop Car. Nhóm 7 HTTT1 <a href="http://chocotemplates.com">- K11</a> </p>
+          </div>
+          <!-- End Footer -->
+        </div>
+        <!-- End Shell -->
+    </form>
+</body>
+</html>
