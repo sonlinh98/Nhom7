@@ -76,7 +76,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Ngày tạo" SortExpression="NgayTao">
                     <EditItemTemplate>
-                        <asp:Label ID="Label13" runat="server" Text='<%# Eval("NgayTao") %>'></asp:Label>
+                        <asp:Label ID="Label13" runat="server" Text='<%# Eval("NgayTao", "{0:dd/MM/yyyy}") %>'></asp:Label>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("NgayTao", "{0:dd/MM/yyyy}") %>'></asp:Label>

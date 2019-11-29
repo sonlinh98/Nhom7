@@ -211,53 +211,53 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 550px"><strong>
-                                <table border="1" class="w-90" style="width: 90%; ">
+                            <td style="padding: 5px; width: 550px"><strong>
+                                <table border="1" class="w-90" style="with: 90%;">
                                     <tr>
                                         <td class="text-left" style="width: 222px; height: 24px;"><strong>Mã đơn hàng:</strong></td>
-                                        <td class="text-left" style="height: 24px">
+                                        <td class="text-left" style="height: 24px; width: 203px;">
                                             <asp:Label ID="MaDonHangLabel" runat="server" Text='<%# Eval("MaDonHang") %>' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-left" style="width: 222px"><strong>Ngày tạo:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 203px">
                                             <asp:Label ID="NgayTaoLabel" runat="server" Text='<%# Bind("NgayTao", "{0:dd/MM/yyyy}") %>' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-left" style="width: 222px"><strong>Tổng tiền:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 203px">
                                             <asp:Label ID="DonGiaLabel" runat="server" Text='<%# Bind("DonGia", "{0:0,0 đ}") %>' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-left" style="width: 222px"><strong>Hình thức thanh toán:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 203px">
                                             <asp:Label ID="HinhThucThanhToanLabel" runat="server" Text='<%# Bind("HinhThucThanhToan") %>' />
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="text-left" style="width: 222px"><strong>Trạng thái đơn hàng:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 203px">
                                             <asp:Label ID="Label1" runat="server" Text='<%# Eval("TrangThaiDonHang") %>'></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left" style="width: 222px"><strong>Tên ngân hàng:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 222px; height: 23px;"><strong>Tên ngân hàng:</strong></td>
+                                        <td class="text-left" style="height: 23px; width: 203px">
                                             <asp:Label ID="Label2" runat="server" Text='<%# Eval("TenNganHang") %>'></asp:Label>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left" style="width: 222px"><strong>Mã thẻ ngân hàng:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 222px; height: 23px;"><strong>Mã thẻ ngân hàng:</strong></td>
+                                        <td class="text-left" style="height: 23px; width: 203px">
                                             <asp:Label ID="Label3" runat="server" Text='<%# Eval("MaTheNganHang") %>'></asp:Label>
                                         </td>
                                     </tr>
                                 </table>
                                 </strong></td>
-                            <td>
+                            <td style="padding: 5px;">
                                 <table border="1" class="w-90">
                                     <tr>
                                         <td class="text-left" style="width: 259px; height: 24px;"><strong>Tên tài khoản:</strong></td>
@@ -266,28 +266,36 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left" style="width: 259px"><strong>Tên người nhận:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 259px; height: 24px;"><strong>Tên người nhận:</strong></td>
+                                        <td class="text-left" style="height: 24px">
                                             <asp:Label ID="HoTenLabel" runat="server" Text='<%# Bind("TenNguoiNhan") %>' />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left" style="width: 259px"><strong>Địa chỉ nhận:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 259px; height: 24px;"><strong>Địa chỉ nhận:</strong></td>
+                                        <td class="text-left" style="height: 24px">
                                             <asp:Label ID="DiaChiLabel" runat="server" Text='<%# Bind("DiaChiNhan") %>' />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="text-left" style="width: 259px"><strong>Số diện thoại người nhận:</strong></td>
-                                        <td class="text-left">
+                                        <td class="text-left" style="width: 259px; height: 23px;"><strong>Số diện thoại người nhận:</strong></td>
+                                        <td class="text-left" style="height: 23px">
                                             <asp:Label ID="SoDienThoaiLabel" runat="server" Text='<%# Bind("SDTNguoiNhan") %>' />
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td class="text-left" style="visibility: hidden;">&nbsp;</td>
+                                        <td class="text-left" style="visibility: hidden;">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left" style="visibility: hidden;">&nbsp;</td>
+                                        <td class="text-left" style="visibility: hidden;">&nbsp;</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-left" style="visibility: hidden;">&nbsp;</td>
+                                        <td class="text-left" style="visibility: hidden;">&nbsp;</td>
+                                    </tr>
                                 </table>
-                                <br />
-                                <br />
-                                <br />
-                                <br />
                             </td>
                         </tr>
                     </table>
