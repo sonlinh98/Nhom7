@@ -11,6 +11,7 @@ public partial class _Default : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Chart1.Series["Series1"].IsValueShownAsLabel = true;
+        //Chart1.Series["Series1"].Points.AxisX.Maximum = 2;
         //Chart1.Series["Series1"].Points[2].Label = "My Point Label\nLabel Line #2";
     }
 

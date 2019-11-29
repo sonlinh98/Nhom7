@@ -5,23 +5,25 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <br />
     <h2>Thống kê doanh thu các tháng trong năm 2019</h2>
-    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDsThongKe" Height="424px" Width="840px">
-        <Series>
-            <asp:Series Name="Series1" XValueMember="Thang" YValueMembers="Doanhthu">
-            </asp:Series>
-        </Series>
-        <ChartAreas>
-            <asp:ChartArea Name="ChartArea1">
-            </asp:ChartArea>
-        </ChartAreas>
-</asp:Chart>
-    <br />
   
         <asp:SqlDataSource ID="SqlDsThongKe" runat="server" ConnectionString="<%$ ConnectionStrings:QLBanOtoConnectionString %>" SelectCommand="Select SUM(DonGia) as 'Doanhthu', MONTH(NgayTao) as 'Thang' From DON_HANG WHERE YEAR(NgayTao)=@nam GROUP BY MONTH(NgayTao) ">
             <SelectParameters>
                 <asp:Parameter DefaultValue="2019" Name="nam" />
             </SelectParameters>
     </asp:SqlDataSource>
+    
+    <asp:Chart ID="Chart1" runat="server" DataSourceID="SqlDsThongKe" Height="501px" Width="857px">
+        <Series>
+            <asp:Series IsXValueIndexed="True" Name="Series1" XValueMember="Thang" XValueType="Single" YValueMembers="Doanhthu">
+            </asp:Series>
+        </Series>
+        <ChartAreas>
+            <asp:ChartArea Name="ChartArea1">
+
+            </asp:ChartArea>
+        </ChartAreas>
+    </asp:Chart>
+    <br />
     
 </asp:Content>
 
