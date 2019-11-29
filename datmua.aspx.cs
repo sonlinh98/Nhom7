@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 public partial class datmua : System.Web.UI.Page
 {
-    private string TenTaiKhoanLogin = "son";
+    private string TenTaiKhoanLogin;
     private int maxe;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -17,7 +17,7 @@ public partial class datmua : System.Web.UI.Page
         try
         {
             // Kiểm tra đăng nhập
-            //TenTaiKhoanLogin = Session["TenDangNhap"].ToString();
+            TenTaiKhoanLogin = Session["tenDN"].ToString();
 
             int custID = 0;
             bool kq =  int.TryParse(Request.QueryString["MaXe"], out custID);
